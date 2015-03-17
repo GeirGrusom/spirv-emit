@@ -6,26 +6,53 @@ using System.Threading.Tasks;
 
 namespace SpirV.Emit
 {
-    public class Emit
+    public partial class Emit
     {
+        private int _id;
         private int _ip;
         private readonly List<int> _data;
-
         public const int SpirVMagic = 0x07230203;
+        private readonly Header _header;
 
-        public Emit()
+        public int GeneratorMagic { get { return _header.GeneratorMagic; } }
+        public int Version { get { return _header.Version; } }
+
+        public int CurrentOffset { get { return _ip; } }
+
+        protected int AllocateId()
         {
-            _data = new List<int>();
+            return ++_id;
+        }
+
+        public Emit(Header header)
+        {
+            if(header.InstructionSchema != 0)
+                throw new NotSupportedException("InstructionSchema is reserved.");
+
+            _data = new List<int>
+            {
+                0, // Magic
+                0, // Version
+                0, // Generator magic
+                0, // Bounds
+                0,  // Reserved
+            };
+            _header = header;
+            _ip = 5;
         }
 
         public void WriteHeader()
         {
-            
+            _data[0] = SpirVMagic;
+            _data[1] = _header.Version;
+            _data[2] = _header.GeneratorMagic;
+            _data[3] = _id;
+            _data[4] = 0; // Reserved for instruction schema.
         }
 
-        public void Write(Instruction instruction)
+        protected void Write(Instruction instruction)
         {
-            
+            _ip += instruction.CopyTo(_data);
         }
     }
 }

@@ -40,7 +40,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Emit.cs" />
+    <Compile Include="EmitInstructions.cs" />
+    <Compile Include="Header.cs" />
     <Compile Include="Instruction.cs" />
+    <Compile Include="Instructions\IResultId.cs" />
+    <Compile Include="Instructions\Nop.cs" />
+    <Compile Include="Instructions\Source.cs" />
+    <Compile Include="Instructions\SourceLanguage.cs" />
+    <Compile Include="Instructions\Undef.cs" />
+    <Compile Include="Instructions\TypeInstruction.cs" />
     <Compile Include="OpCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

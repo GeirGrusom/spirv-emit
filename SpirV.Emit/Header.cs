@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SpirV.Emit
 {
-    public enum OpCode : ushort
+    public struct Header
     {
-        OpNop = 0,
-        OpUndef = 45,
-        OpSource = 1,
+        public int GeneratorMagic;
+        public int Version;
+        public int InstructionSchema;
     }
 }

@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpirV.Emit
+namespace SpirV.Emit.Instructions
 {
-    public enum OpCode : ushort
+    public interface IResultId
     {
-        OpNop = 0,
-        OpUndef = 45,
-        OpSource = 1,
+        int ResultId { get; }
     }
 }
