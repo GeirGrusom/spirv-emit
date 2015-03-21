@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,16 +42,19 @@
   <ItemGroup>
     <Compile Include="Emit.cs" />
     <Compile Include="EmitInstructions.cs" />
+    <Compile Include="Endianness.cs" />
     <Compile Include="Header.cs" />
     <Compile Include="Instruction.cs" />
     <Compile Include="Instructions\IResultId.cs" />
     <Compile Include="Instructions\Nop.cs" />
+    <Compile Include="Instructions\IResultType.cs" />
     <Compile Include="Instructions\Source.cs" />
     <Compile Include="Instructions\SourceLanguage.cs" />
     <Compile Include="Instructions\Undef.cs" />
     <Compile Include="Instructions\TypeInstruction.cs" />
     <Compile Include="OpCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringLiteral.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

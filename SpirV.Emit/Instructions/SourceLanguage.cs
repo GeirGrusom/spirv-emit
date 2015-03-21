@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SpirV.Emit.Instructions
 {
-    public enum SourceLanguage
+    public enum SourceLanguage : uint
     {
         Unknown = 0,
         ESSL = 1,

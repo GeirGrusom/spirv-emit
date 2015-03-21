@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SpirV.Emit.Instructions
+﻿namespace SpirV.Emit.Instructions
 {
-    public sealed class Undef : Instruction, IResultId
+    public sealed class Undef : Instruction, IResultId, IResultType
     {
 
-        public int TypeId { get { return GetWord(0); } }
-        public int ResultId { get { return GetWord(1); } }
+        public uint ResultType { get { return GetWord(0); } }
+        public uint ResultId { get { return GetWord(1); } }
 
-        internal Undef(TypeInstruction type, int resultId) : base(OpCode.OpUndef, type.ResultId, resultId)
+        internal Undef(TypeInstruction type, uint resultId) : base(OpCode.OpUndef, type.ResultId, resultId)
         {
         }
     }

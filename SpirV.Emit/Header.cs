@@ -8,8 +8,8 @@ namespace SpirV.Emit
 {
     public struct Header
     {
-        public int GeneratorMagic;
-        public int Version;
-        public int InstructionSchema;
+        public uint GeneratorMagic;
+        public uint Version;
+        public uint InstructionSchema;
     }
 }

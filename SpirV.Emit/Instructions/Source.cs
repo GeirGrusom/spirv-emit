@@ -8,7 +8,7 @@ namespace SpirV.Emit.Instructions
 {
     public class Source : Instruction
     {
-        public Source(SourceLanguage source, int version) : base(OpCode.OpSource, (int)source, version)
+        public Source(SourceLanguage source, uint version) : base(OpCode.OpSource, (uint)source, version)
         {
         }
     }

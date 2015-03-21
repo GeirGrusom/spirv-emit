@@ -13,7 +13,7 @@ namespace SpirV.Emit.Tests
 
         public class FooInstruction : Instruction
         {
-            public FooInstruction(OpCode opCode, params int[] words) : base(opCode, words)
+            public FooInstruction(OpCode opCode, params uint[] words) : base(opCode, words)
             {
             }
         }

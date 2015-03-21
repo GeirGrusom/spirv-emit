@@ -8,18 +8,18 @@ namespace SpirV.Emit
 {
     public partial class Emit
     {
-        private int _id;
+        private uint _id;
         private int _ip;
-        private readonly List<int> _data;
-        public const int SpirVMagic = 0x07230203;
+        private readonly List<uint> _data;
+        public const uint SpirVMagic = 0x07230203;
         private readonly Header _header;
 
-        public int GeneratorMagic { get { return _header.GeneratorMagic; } }
-        public int Version { get { return _header.Version; } }
+        public uint GeneratorMagic { get { return _header.GeneratorMagic; } }
+        public uint Version { get { return _header.Version; } }
 
         public int CurrentOffset { get { return _ip; } }
 
-        protected int AllocateId()
+        protected uint AllocateId()
         {
             return ++_id;
         }
@@ -29,7 +29,7 @@ namespace SpirV.Emit
             if(header.InstructionSchema != 0)
                 throw new NotSupportedException("InstructionSchema is reserved.");
 
-            _data = new List<int>
+            _data = new List<uint>
             {
                 0, // Magic
                 0, // Version

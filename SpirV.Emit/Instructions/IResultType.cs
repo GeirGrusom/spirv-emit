@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SpirV.Emit.Instructions
 {
-    public interface IResultId
+    public interface IResultType
     {
-        uint ResultId { get; }
+        uint ResultType { get; }
     }
 }

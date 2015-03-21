@@ -48,7 +48,7 @@ namespace SpirV.Emit.Tests
             var result = emit.EmitUndef(type);
 
             Assert.That(result.OpCode, Is.EqualTo(OpCode.OpUndef));
-            Assert.That(result.TypeId, Is.EqualTo(5));
+            Assert.That(result.ResultType, Is.EqualTo(5));
             Assert.That(result.ResultId, Is.EqualTo(1));
         }
     }
